@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Product Details | FreshBite</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- Navigation Bar -->
+    <header>
+        <nav class="navbar">
+
+            <div class="logo">
+                FreshBite
+            </div>
+
+            <div class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="restaurants.html">Restaurants</a>
+                <a href="menu.html">Menu</a>
+                <a href="#">About Us</a>
+                <a href="#">Contact</a>
+                <a href="#">Login</a>
+                <a href="#">Cart (<span id="cart-count">0</span>)</a>
+            </div>
+
+        </nav>
+    </header>
+
+
+    <!-- Product Details -->
+    <section class="product-details">
+
+        <div class="product-image">
+            <img
+                src="https://images.unsplash.com/photo-1574071318508-1cdbab80d002?auto=format&fit=crop&w=900&q=80"
+                alt="Cheese Burst Pizza">
+        </div>
+
+
+        <div class="product-info">
+
+            <p class="product-category">Pizza</p>
+
+            <h1>Cheese Burst Pizza</h1>
+
+            <div class="rating">
+                ⭐ 4.8
+                <span> • 120+ ratings</span>
+            </div>
+
+            <p class="product-description">
+                Enjoy our delicious cheese burst pizza made with
+                fresh vegetables, rich cheese and a crispy golden
+                crust. Perfect for sharing with friends and family.
+            </p>
+
+            <h2>₹249</h2>
+
+            <div class="quantity-box">
+
+                <button onclick="decreaseQuantity()">−</button>
+
+                <span id="quantity">1</span>
+
+                <button onclick="increaseQuantity()">+</button>
+
+            </div>
+
+            <button class="add-cart-btn" onclick="addToCart()">
+                Add to Cart
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <!-- Product Information -->
+    <section class="product-extra">
+
+        <h2>About this dish</h2>
+
+        <p>
+            Our Cheese Burst Pizza is prepared using fresh ingredients
+            and a delicious cheese-filled base. It is baked fresh after
+            every order to give you a crispy crust and cheesy taste.
+        </p>
+
+        <div class="features">
+
+            <div>
+                <h3>🍕 Freshly Made</h3>
+                <p>Prepared fresh for every order.</p>
+            </div>
+
+            <div>
+                <h3>🧀 Extra Cheesy</h3>
+                <p>Loaded with delicious cheese.</p>
+            </div>
+
+            <div>
+                <h3>🚴 Fast Delivery</h3>
+                <p>Quick delivery to your doorstep.</p>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- Related Products -->
+    <section class="related-products">
+
+        <h2>You May Also Like</h2>
+
+        <div class="food-grid">
+
+            <div class="food-card">
+
+                <img
+                    src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=600&q=80"
+                    alt="Burger">
+
+                <h3>Classic Fresh Burger</h3>
+
+                <p>⭐ 4.7</p>
+
+                <strong>₹179</strong>
+
+                <br><br>
+
+                <a href="product.html">View Details</a>
+
+            </div>
+
+
+            <div class="food-card">
+
+                <img
+                    src="https://images.unsplash.com/photo-1563379926898-05f4575a45d8?auto=format&fit=crop&w=600&q=80"
+                    alt="Pasta">
+
+                <h3>Creamy Italian Pasta</h3>
+
+                <p>⭐ 4.6</p>
+
+                <strong>₹199</strong>
+
+                <br><br>
+
+                <a href="product.html">View Details</a>
+
+            </div>
+
+
+            <div class="food-card">
+
+                <img
+                    src="https://images.unsplash.com/photo-1563379091339-03246963d96c?auto=format&fit=crop&w=600&q=80"
+                    alt="Biryani">
+
+                <h3>Special Biryani</h3>
+
+                <p>⭐ 4.9</p>
+
+                <strong>₹299</strong>
+
+                <br><br>
+
+                <a href="product.html">View Details</a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- Footer -->
+    <footer>
+
+        <h2>FreshBite</h2>
+
+        <p>Good Food, Good Mood ❤️</p>
+
+        <p>© 2026 FreshBite. All rights reserved.</p>
+
+    </footer>
+
+
+    <script src="script.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Login | FreshBite</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- Navigation Bar -->
+    <header>
+        <nav class="navbar">
+
+            <div class="logo">
+                FreshBite
+            </div>
+
+            <div class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="restaurants.html">Restaurants</a>
+                <a href="menu.html">Menu</a>
+                <a href="about.html">About Us</a>
+                <a href="contact.html">Contact</a>
+                <a href="login.html">Login</a>
+                <a href="cart.html">
+                    Cart (<span id="cart-count">0</span>)
+                </a>
+
+            </div>
+
+        </nav>
+    </header>
+
+
+    <!-- Login Section -->
+    <section class="login-section">
+
+        <div class="login-box">
+
+            <h1>Welcome Back 👋</h1>
+
+            <p>Login to continue ordering your favourite food.</p>
+
+
+            <form onsubmit="loginUser(event)">
+
+                <label for="email">Email Address</label>
+
+                <input
+                    type="email"
+                    id="email"
+                    placeholder="Enter your email"
+                    required
+                >
+
+
+                <label for="password">Password</label>
+
+                <input
+                    type="password"
+                    id="password"
+                    placeholder="Enter your password"
+                    required
+                >
+
+
+                <div class="login-options">
+
+                    <label>
+                        <input type="checkbox">
+                        Remember me
+                    </label>
+
+                    <a href="#">Forgot Password?</a>
+
+                </div>
+
+
+                <button type="submit" class="login-btn">
+                    Login
+                </button>
+
+            </form>
+
+
+            <div class="login-divider">
+                <span>or</span>
+            </div>
+
+
+            <button class="google-btn">
+                Continue with Google
+            </button>
+
+
+            <p class="signup-text">
+                Don't have an account?
+                <a href="#">Create Account</a>
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- Footer -->
+    <footer>
+
+        <h2>FreshBite</h2>
+
+        <p>Good Food, Good Mood ❤️</p>
+
+        <p>© 2026 FreshBite. All rights reserved.</p>
+
+    </footer>
+
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>

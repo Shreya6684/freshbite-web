@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Menu - FreshBite</title>
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+
+<!-- NAVBAR -->
+
+<nav class="navbar">
+
+    <div class="logo">
+        Fresh<span>Bite</span>
+    </div>
+
+    <div class="nav-links">
+
+        <a href="index.html">Home</a>
+
+        <a href="restaurants.html">Restaurants</a>
+
+        <a href="menu.html" class="active">Menu</a>
+
+        <a href="about.html">About</a>
+
+        <a href="contact.html">Contact</a>
+
+    </div>
+
+    <div class="nav-buttons">
+
+        <a href="login.html" class="login-btn">
+            Login
+        </a>
+
+        <a href="cart.html" class="cart-btn">
+            🛒 Cart
+            <span id="cart-count">0</span>
+        </a>
+
+    </div>
+
+</nav>
+
+
+
+<!-- MENU HEADER -->
+
+<section class="menu-page-header">
+
+    <div>
+
+        <span>FRESH & DELICIOUS</span>
+
+        <h1 id="restaurant-menu-title">
+            Explore Our Menu
+        </h1>
+
+        <p id="restaurant-menu-description">
+            Search for a restaurant or your favourite food.
+        </p>
+
+    </div>
+
+</section>
+
+
+
+<!-- SEARCH -->
+
+<section class="menu-explore">
+
+    <div class="menu-search-box">
+
+        <input
+            type="text"
+            id="menu-search"
+            placeholder="Search restaurant or food..."
+        >
+
+        <button onclick="searchEverything()">
+            Search
+        </button>
+
+    </div>
+
+    <p class="search-hint">
+        Try "Pizza", "Burger", "Biryani", "Cake" or a restaurant name
+    </p>
+
+</section>
+
+
+
+<!-- EXPLORE RESULTS -->
+
+<section
+    class="explore-results"
+    id="explore-results"
+>
+
+    <div class="section-heading">
+
+        <span>DISCOVER</span>
+
+        <h2>Restaurants & Food</h2>
+
+        <p>
+            Choose a restaurant or search for your favourite dish.
+        </p>
+
+    </div>
+
+
+    <div
+        class="explore-grid"
+        id="explore-grid"
+    >
+
+    </div>
+
+</section>
+
+
+
+<!-- SELECTED RESTAURANT MENU -->
+
+<section
+    class="selected-menu-section"
+    id="selected-menu-section"
+>
+
+    <div class="selected-menu-top">
+
+        <a
+            href="menu.html"
+            class="back-menu"
+        >
+            ← Back to Explore
+        </a>
+
+    </div>
+
+
+    <div class="section-heading">
+
+        <span id="restaurant-label">
+            OUR SPECIALS
+        </span>
+
+        <h2 id="selected-restaurant-name">
+            Popular Dishes
+        </h2>
+
+        <p id="selected-restaurant-description">
+            Choose from our most loved dishes.
+        </p>
+
+    </div>
+
+
+    <!-- CATEGORY -->
+
+    <div
+        class="menu-categories"
+        id="menu-categories"
+    >
+
+    </div>
+
+
+    <!-- FOOD SEARCH -->
+
+    <div class="food-search">
+
+        <input
+            type="text"
+            id="food-search"
+            placeholder="Search food in this restaurant..."
+        >
+
+    </div>
+
+
+    <!-- FOOD CARDS -->
+
+    <div
+        class="menu-list"
+        id="restaurant-menu"
+    >
+
+    </div>
+
+</section>
+
+
+
+<!-- OFFER -->
+
+<section class="offer-section">
+
+    <div class="offer-content">
+
+        <span>SPECIAL OFFER</span>
+
+        <h2>
+            Get 20% OFF on Your First Order
+        </h2>
+
+        <p>
+            Enjoy delicious food delivered fresh to your doorstep.
+        </p>
+
+        <a href="cart.html" class="offer-btn">
+            View Cart
+        </a>
+
+    </div>
+
+</section>
+
+
+
+<!-- Footer -->
+    <footer>
+
+        <div class="footer-container">
+
+            <div class="footer-about">
+
+                <div class="logo">
+                    Fresh<span>Bite</span>
+                </div>
+
+                <p>
+                    Fresh food, happy moments.
+                    Delicious meals delivered to your doorstep.
+                </p>
+
+            </div>
+
+
+            <div class="footer-links">
+
+                <h3>Explore</h3>
+
+                <a href="index.html">Home</a>
+                <a href="restaurants.html">Restaurants</a>
+                <a href="menu.html">Menu</a>
+                <a href="about.html">About Us</a>
+
+            </div>
+
+
+            <div class="footer-links">
+
+                <h3>Customer</h3>
+
+                <a href="account.html">My Account</a>
+                <a href="cart.html">Cart</a>
+                <a href="login.html">Login</a>
+                <a href="contact.html">Contact</a>
+
+            </div>
+
+
+            <div class="footer-contact">
+
+                <h3>Contact</h3>
+
+                <p>📍 Jamshedpur, India</p>
+                <p>📞 +91 98765 43210</p>
+                <p>✉️ hello@freshbite.com</p>
+
+            </div>
+
+        </div>
+
+
+        <div class="footer-bottom">
+
+            <p>
+                © 2026 FreshBite. All Rights Reserved.
+            </p>
+
+        </div>
+
+    </footer>
+<script src="script.js"></script>
+</body>
+</html>

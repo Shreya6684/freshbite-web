@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Restaurants - FreshBite</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+
+<nav class="navbar">
+
+    <div class="logo">
+        Fresh<span>Bite</span>
+    </div>
+
+    <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="restaurants.html" class="active">Restaurants</a>
+        <a href="menu.html">Menu</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+    </div>
+
+    <div class="nav-buttons">
+
+        <a href="login.html" class="login-btn">
+            Login
+        </a>
+
+        <a href="cart.html" class="cart-btn">
+            🛒 Cart
+            <span id="cart-count">0</span>
+        </a>
+
+    </div>
+
+</nav>
+
+
+<!-- RESTAURANT HEADER -->
+
+<section class="restaurants-header">
+
+    <div class="section-heading">
+
+        <span>EXPLORE OUR PARTNERS</span>
+
+        <h1>Choose Your Restaurant</h1>
+
+        <p>
+            Find your favourite restaurant and explore its delicious menu.
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- SEARCH -->
+
+<section class="restaurant-search">
+
+    <input
+        type="text"
+        id="restaurant-search"
+        placeholder="Search restaurant..."
+    >
+
+</section>
+
+
+<!-- FILTER -->
+
+<div class="restaurant-filters">
+
+    <button class="restaurant-filter active" data-filter="all">
+        All
+    </button>
+
+    <button class="restaurant-filter" data-filter="pizza">
+        🍕 Pizza
+    </button>
+
+    <button class="restaurant-filter" data-filter="burger">
+        🍔 Burgers
+    </button>
+
+    <button class="restaurant-filter" data-filter="indian">
+        🍛 Indian
+    </button>
+
+    <button class="restaurant-filter" data-filter="chinese">
+        🍜 Chinese
+    </button>
+
+    <button class="restaurant-filter" data-filter="biryani">
+        🍚 Biryani
+    </button>
+
+    <button class="restaurant-filter" data-filter="dessert">
+        🍰 Desserts
+    </button>
+
+</div>
+
+
+<!-- RESTAURANTS -->
+
+<section class="restaurant-section">
+
+    <div class="section-heading">
+
+        <span>FRESH & DELICIOUS</span>
+
+        <h2>Popular Restaurants</h2>
+
+        <p>
+            Select a restaurant to see its menu.
+        </p>
+
+    </div>
+
+
+    <div class="restaurant-container" id="restaurant-list">
+
+
+        <!-- 1. LA PINO'S PIZZA -->
+
+        <div class="restaurant-card" data-category="pizza">
+
+            <img
+                src="https://images.unsplash.com/photo-1513104890138-7c749659a591?auto=format&fit=crop&w=900&q=85"
+                alt="La Pino's Pizza"
+            >
+
+            <div class="restaurant-info">
+
+                <h3>La Pino's Pizza</h3>
+
+                <p class="restaurant-type">
+                    Pizza • Italian • Fast Food
+                </p>
+
+                <div class="restaurant-details">
+
+                    <span>⭐ 4.8</span>
+                    <span>🕒 25-35 min</span>
+
+                </div>
+
+                <p class="restaurant-price">
+                    ₹200 for two
+                </p>
+
+                <a
+                    href="menu.html?restaurant=pizza"
+                    class="view-menu"
+                >
+                    View Menu
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <!-- 2. BURGER HOUSE -->
+
+        <div class="restaurant-card" data-category="burger">
+
+            <img
+                src="https://images.unsplash.com/photo-1571091718767-18b5b1457add?auto=format&fit=crop&w=900&q=85"
+                alt="Burger House"
+            >
+
+            <div class="restaurant-info">
+
+                <h3>Burger House</h3>
+
+                <p class="restaurant-type">
+                    Burgers • Fast Food • Beverages
+                </p>
+
+                <div class="restaurant-details">
+
+                    <span>⭐ 4.7</span>
+                    <span>🕒 20-30 min</span>
+
+                </div>
+
+                <p class="restaurant-price">
+                    ₹250 for two
+                </p>
+
+                <a
+                    href="menu.html?restaurant=burger"
+                    class="view-menu"
+                >
+                    View Menu
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <!-- 3. SHREE SUKH SAGAR -->
+
+        <div class="restaurant-card" data-category="indian">
+
+            <img
+                src="https://images.unsplash.com/photo-1585937421612-70a008356fbe?auto=format&fit=crop&w=900&q=85"
+                alt="Shree Sukh Sagar"
+            >
+
+            <div class="restaurant-info">
+
+                <h3>Shree Sukh Sagar</h3>
+
+                <p class="restaurant-type">
+                    Indian • North Indian • Thali
+                </p>
+
+                <div class="restaurant-details">
+
+                    <span>⭐ 4.9</span>
+                    <span>🕒 30-40 min</span>
+
+                </div>
+
+                <p class="restaurant-price">
+                    ₹300 for two
+                </p>
+
+                <a
+                    href="menu.html?restaurant=indian"
+                    class="view-menu"
+                >
+                    View Menu
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <!-- 4. THINK ASIA -->
+
+        <div class="restaurant-card" data-category="chinese">
+
+            <img
+                src="https://images.unsplash.com/photo-1552611052-33e04de081de?auto=format&fit=crop&w=900&q=85"
+                alt="Think Asia"
+            >
+
+            <div class="restaurant-info">
+
+                <h3>Think Asia</h3>
+
+                <p class="restaurant-type">
+                    Chinese • Noodles • Asian
+                </p>
+
+                <div class="restaurant-details">
+
+                    <span>⭐ 4.6</span>
+                    <span>🕒 25-35 min</span>
+
+                </div>
+
+                <p class="restaurant-price">
+                    ₹280 for two
+                </p>
+
+                <a
+                    href="menu.html?restaurant=chinese"
+                    class="view-menu"
+                >
+                    View Menu
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <!-- 5. THE ONYX -->
+
+        <div class="restaurant-card" data-category="biryani">
+
+            <img
+                src="https://images.unsplash.com/photo-1589302168068-964664d93dc0?auto=format&fit=crop&w=900&q=85"
+                alt="The Onyx Biryani"
+            >
+
+            <div class="restaurant-info">
+
+                <h3>The Onyx</h3>
+
+                <p class="restaurant-type">
+                    Biryani • Indian • Vegetarian
+                </p>
+
+                <div class="restaurant-details">
+
+                    <span>⭐ 4.5</span>
+                    <span>🕒 20-30 min</span>
+
+                </div>
+
+                <p class="restaurant-price">
+                    ₹350 for two
+                </p>
+
+                <a
+                    href="menu.html?restaurant=biryani"
+                    class="view-menu"
+                >
+                    View Menu
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <!-- 6. BRUBECK BAKERY -->
+
+        <div class="restaurant-card" data-category="dessert">
+
+            <img
+                src="https://images.unsplash.com/photo-1551024506-0bccd828d307?auto=format&fit=crop&w=900&q=85"
+                alt="Brubeck Bakery"
+            >
+
+            <div class="restaurant-info">
+
+                <h3>Brubeck Bakery</h3>
+
+                <p class="restaurant-type">
+                    Desserts • Cakes • Ice Cream
+                </p>
+
+                <div class="restaurant-details">
+
+                    <span>⭐ 4.8</span>
+                    <span>🕒 15-25 min</span>
+
+                </div>
+
+                <p class="restaurant-price">
+                    ₹250 for two
+                </p>
+
+                <a
+                    href="menu.html?restaurant=dessert"
+                    class="view-menu"
+                >
+                    View Menu
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- OFFER -->
+
+<section class="offer-section">
+
+    <div class="offer-content">
+
+        <span>LIMITED TIME OFFER</span>
+
+        <h2>Get 20% OFF on Your First Order</h2>
+
+        <p>
+            Order your favourite food from FreshBite.
+        </p>
+
+        <a href="menu.html" class="offer-btn">
+            Explore Menu
+        </a>
+
+    </div>
+
+</section>
+
+
+<!-- Footer -->
+    <footer>
+
+        <div class="footer-container">
+
+            <div class="footer-about">
+
+                <div class="logo">
+                    Fresh<span>Bite</span>
+                </div>
+
+                <p>
+                    Fresh food, happy moments.
+                    Delicious meals delivered to your doorstep.
+                </p>
+
+            </div>
+
+
+            <div class="footer-links">
+
+                <h3>Explore</h3>
+
+                <a href="index.html">Home</a>
+                <a href="restaurants.html">Restaurants</a>
+                <a href="menu.html">Menu</a>
+                <a href="about.html">About Us</a>
+
+            </div>
+
+
+            <div class="footer-links">
+
+                <h3>Customer</h3>
+
+                <a href="account.html">My Account</a>
+                <a href="cart.html">Cart</a>
+                <a href="login.html">Login</a>
+                <a href="contact.html">Contact</a>
+
+            </div>
+
+
+            <div class="footer-contact">
+
+                <h3>Contact</h3>
+
+                <p>📍 Jamshedpur, India</p>
+                <p>📞 +91 98765 43210</p>
+                <p>✉️ hello@freshbite.com</p>
+
+            </div>
+
+        </div>
+
+
+        <div class="footer-bottom">
+
+            <p>
+                © 2026 FreshBite. All Rights Reserved.
+            </p>
+
+        </div>
+
+    </footer>
+<script src="script.js"></script>
+</body>
+</html>
