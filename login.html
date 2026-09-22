@@ -47,7 +47,7 @@
             <p>Login to continue ordering your favourite food.</p>
 
 
-            <form onsubmit="loginUser(event)">
+            <form id="login-form" onsubmit="loginUser(event)">
 
                 <label for="email">Email Address</label>
 
@@ -100,9 +100,49 @@
 
             <p class="signup-text">
                 Don't have an account?
-                <a href="#">Create Account</a>
+                <a href="#" onclick="showRegisterForm(event)">Create Account</a>
             </p>
 
+        </div>
+
+        <div class="login-box register-box" id="register-box" style="display: none;">
+
+            <h1>Create Account</h1>
+
+            <p>Register to save your details and track every order.</p>
+
+            <form onsubmit="registerUser(event)">
+
+                <label for="register-name">Full Name</label>
+                <input type="text" id="register-name" placeholder="Enter your name" required>
+
+                <label for="register-email">Email Address</label>
+                <input type="email" id="register-email" placeholder="Enter your email" required>
+
+                <label for="register-password">Password</label>
+                <input type="password" id="register-password" placeholder="Create a password" required>
+
+                <button type="submit" class="login-btn">Register</button>
+
+            </form>
+
+            <p class="signup-text">
+                Already have an account?
+                <a href="#" onclick="showLoginForm(event)">Login</a>
+            </p>
+
+        </div>
+
+        <div class="login-box account-box" id="account-panel" style="display: none;">
+            <h1>Your Account</h1>
+            <p id="account-welcome"></p>
+            <div class="account-details">
+                <strong>User ID</strong>
+                <span id="account-user-id"></span>
+            </div>
+            <h2>Order History</h2>
+            <div id="order-history"></div>
+            <button type="button" class="login-btn" onclick="logoutUser()">Logout</button>
         </div>
 
     </section>

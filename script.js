@@ -1054,6 +1054,13 @@ function loadCheckout() {
         return;
     }
 
+    if (!getCurrentUser()) {
+        localStorage.setItem("freshbiteReturnTo", "checkout.html");
+        alert("Please login or register before placing an order.");
+        window.location.href = "login.html";
+        return;
+    }
+
 
     if (cart.length === 0) {
 
@@ -1159,6 +1166,13 @@ function placeOrder(event) {
 
     event.preventDefault();
 
+    const currentUser = getCurrentUser();
+
+    if (!currentUser) {
+        requireLogin(event);
+        return;
+    }
+
 
     if (cart.length === 0) {
 
@@ -1224,9 +1238,24 @@ function placeOrder(event) {
     }
 
 
-    alert(
-        "🎉 Order placed successfully!"
-    );
+    const historyKey = getOrderHistoryKey(currentUser);
+    const orderHistory = JSON.parse(localStorage.getItem(historyKey)) || [];
+
+    orderHistory.unshift({
+        id: "FB" + Date.now().toString().slice(-8),
+        date: new Date().toLocaleString(),
+        items: cart.map(item => ({
+            name: item.name,
+            quantity: item.quantity,
+            price: item.price
+        })),
+        total: cart.reduce((sum, item) => sum + item.price * item.quantity, 0) + 50,
+        payment: payment.value
+    });
+
+    localStorage.setItem(historyKey, JSON.stringify(orderHistory));
+
+    alert("🎉 Order placed successfully!");
 
 
     cart = [];
@@ -1246,6 +1275,50 @@ function placeOrder(event) {
 // ==========================================
 // LOGIN
 // ==========================================
+
+function getCurrentUser() {
+    return localStorage.getItem("freshbiteUser");
+}
+
+function getOrderHistoryKey(email) {
+    return "freshbiteOrderHistory_" + email.toLowerCase();
+}
+
+function requireLogin(event) {
+    if (getCurrentUser()) {
+        return true;
+    }
+
+    if (event) {
+        event.preventDefault();
+    }
+
+    localStorage.setItem("freshbiteReturnTo", "checkout.html");
+    alert("Please login or register before placing an order.");
+    window.location.href = "login.html";
+    return false;
+}
+
+function showRegisterForm(event) {
+    event.preventDefault();
+    document.querySelector(".login-box").style.display = "none";
+    document.getElementById("register-box").style.display = "block";
+}
+
+function showLoginForm(event) {
+    event.preventDefault();
+    document.getElementById("register-box").style.display = "none";
+    document.querySelector(".login-box").style.display = "block";
+}
+
+function finishAuthentication(email, name) {
+    localStorage.setItem("freshbiteUser", email);
+    localStorage.setItem("freshbiteUserName", name || email.split("@")[0]);
+
+    const returnTo = localStorage.getItem("freshbiteReturnTo");
+    localStorage.removeItem("freshbiteReturnTo");
+    window.location.href = returnTo || "index.html";
+}
 
 function loginUser(event) {
 
@@ -1287,19 +1360,77 @@ function loginUser(event) {
     }
 
 
-    localStorage.setItem(
-        "freshbiteUser",
-        email.value
-    );
-
-
     alert(
         "Login successful! 🎉"
     );
 
+    finishAuthentication(email.value.trim());
 
-    window.location.href =
-        "index.html";
+}
+
+function registerUser(event) {
+
+    event.preventDefault();
+
+    const name = document.getElementById("register-name").value.trim();
+    const email = document.getElementById("register-email").value.trim();
+    const password = document.getElementById("register-password").value.trim();
+
+    if (!name || !email || !password) {
+        alert("Please fill all registration details.");
+        return;
+    }
+
+    alert("Registration successful! 🎉");
+    finishAuthentication(email, name);
+
+}
+
+function logoutUser() {
+    localStorage.removeItem("freshbiteUser");
+    localStorage.removeItem("freshbiteUserName");
+    window.location.reload();
+
+}
+
+function renderAccountPage() {
+
+    const panel = document.getElementById("account-panel");
+    const loginBox = document.querySelector("#login-form")?.closest(".login-box");
+    const registerBox = document.getElementById("register-box");
+    const currentUser = getCurrentUser();
+
+    if (!panel) {
+        return;
+    }
+
+    if (!currentUser) {
+        return;
+    }
+
+    loginBox.style.display = "none";
+    registerBox.style.display = "none";
+    panel.style.display = "block";
+
+    document.getElementById("account-welcome").textContent =
+        "Welcome back, " + (localStorage.getItem("freshbiteUserName") || currentUser) + ".";
+    document.getElementById("account-user-id").textContent = currentUser;
+
+    const history = JSON.parse(localStorage.getItem(getOrderHistoryKey(currentUser))) || [];
+    const historyContainer = document.getElementById("order-history");
+
+    if (history.length === 0) {
+        historyContainer.innerHTML = "<p class=\"empty-history\">No orders yet. Your completed orders will appear here.</p>";
+        return;
+    }
+
+    historyContainer.innerHTML = history.map(order => `
+        <div class="order-history-item">
+            <div><strong>${order.id}</strong><span>${order.date}</span></div>
+            <p>${order.items.map(item => item.name + " × " + item.quantity).join(", ")}</p>
+            <strong>₹${order.total}</strong>
+        </div>
+    `).join("");
 
 }
 
@@ -1532,6 +1663,11 @@ document.addEventListener(
         // CHECKOUT
 
         loadCheckout();
+
+
+        // ACCOUNT
+
+        renderAccountPage();
 
 
         // CART COUNT
